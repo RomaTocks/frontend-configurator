@@ -15,6 +15,7 @@ const routes = [
     path:'/cpu',
     props: {
       path : "cpu",
+      controller : new AbortController(),
     },
     component: CpuPage,
   },
@@ -23,6 +24,7 @@ const routes = [
     path:'/gpu',
     props: {
       path : "gpu",
+      controller : new AbortController(),
     },
     component: GraphicCardsPage,
   },
@@ -31,6 +33,7 @@ const routes = [
     path:'/chassis',
     props: {
       path : "chassis",
+      controller : new AbortController(),
     },
     component: ChassisPage,
   },
@@ -39,6 +42,7 @@ const routes = [
     path:'/motherboard',
     props: {
       path : "motherboard",
+      controller : new AbortController(),
     },
     component: MotherboardPage,
   },
@@ -47,6 +51,7 @@ const routes = [
     path:'/psu',
     props: {
       path : "psu",
+      controller : new AbortController(),
     },
     component: PsuPage,
   },
@@ -55,6 +60,7 @@ const routes = [
     path:'/ram',
     props: {
       path : "ram",
+      controller : new AbortController(),
     },
     component: RamPage,
   },
@@ -63,9 +69,73 @@ const routes = [
     path:'/fan',
     props: {
       path : "fan",
+      controller : new AbortController(),
     },
     component: FanPage,
   },
+  // {
+  //   path: '/',
+  //   redirect: 'dashboard',
+  // },
+  // {
+  //   path: '/dashboard',
+  //   name: 'dashboard',
+  //   component: () => import('@/views/dashboard/Dashboard.vue'),
+  // },
+  // {
+  //   path: '/typography',
+  //   name: 'typography',
+  //   component: () => import('@/views/typography/Typography.vue'),
+  // },
+  // {
+  //   path: '/icons',
+  //   name: 'icons',
+  //   component: () => import('@/views/icons/Icons.vue'),
+  // },
+  // {
+  //   path: '/cards',
+  //   name: 'cards',
+  //   component: () => import('@/views/cards/Card.vue'),
+  // },
+  // {
+  //   path: '/simple-table',
+  //   name: 'simple-table',
+  //   component: () => import('@/views/simple-table/SimpleTable.vue'),
+  // },
+  // {
+  //   path: '/form-layouts',
+  //   name: 'form-layouts',
+  //   component: () => import('@/views/form-layouts/FormLayouts.vue'),
+  // },
+  // {
+  //   path: '/pages/account-settings',
+  //   name: 'pages-account-settings',
+  //   component: () => import('@/views/pages/account-settings/AccountSettings.vue'),
+  // },
+  // {
+  //   path: '/pages/login',
+  //   name: 'pages-login',
+  //   component: () => import('@/views/pages/Login.vue'),
+  //   meta: {
+  //     layout: 'blank',
+  //   },
+  // },
+  // {
+  //   path: '/pages/register',
+  //   name: 'pages-register',
+  //   component: () => import('@/views/pages/Register.vue'),
+  //   meta: {
+  //     layout: 'blank',
+  //   },
+  // },
+  // {
+  //   path: '/error-404',
+  //   name: 'error-404',
+  //   component: () => import('@/views/SearchError.vue'),
+  //   meta: {
+  //     layout: 'blank',
+  //   },
+  // },
   {
     path: '*',
     redirect: 'cpu',
