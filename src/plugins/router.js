@@ -8,6 +8,10 @@ import PsuPage from "@/pages/PsuPage";
 import RamPage from "@/pages/RamPage";
 import FanPage from "@/pages/FanPage";
 import ProductPage from "@/pages/ProductPage";
+import LandingPage from "@/pages/LandingPage";
+import ConfiguratorPage from "@/pages/ConfiguratorPage";
+import ProfilePage from "@/pages/ProfilePage";
+import AuthPage from "@/pages/AuthPage";
 
 Vue.use(VueRouter)
 const routes = [
@@ -35,12 +39,26 @@ const routes = [
     component: GraphicCardsPage,
   },
   {
+    path: '/gpu/:id',
+    props:{
+      path:"gpu"
+    },
+    component: ProductPage
+  },
+  {
     name:'chassis',
     path:'/chassis',
     props: {
       path : "chassis",
     },
     component: ChassisPage,
+  },
+  {
+    path: '/chassis/:id',
+    props:{
+      path:"chassis"
+    },
+    component: ProductPage
   },
   {
     name:'motherboard',
@@ -51,12 +69,26 @@ const routes = [
     component: MotherboardPage,
   },
   {
+    path: '/motherboard/:id',
+    props:{
+      path:"motherboard"
+    },
+    component: ProductPage
+  },
+  {
     name:'psu',
     path:'/psu',
     props: {
       path : "psu",
     },
     component: PsuPage,
+  },
+  {
+    path: '/psu/:id',
+    props:{
+      path:"psu"
+    },
+    component: ProductPage
   },
   {
     name:'ram',
@@ -67,6 +99,13 @@ const routes = [
     component: RamPage,
   },
   {
+    path: '/ram/:id',
+    props:{
+      path:"ram"
+    },
+    component: ProductPage
+  },
+  {
     name:'fan',
     path:'/fan',
     props: {
@@ -74,6 +113,33 @@ const routes = [
     },
     component: FanPage,
   },
+  {
+    path: '/fan/:id',
+    props:{
+      path:"fan"
+    },
+    component: ProductPage
+  },
+  {
+    name: 'configurator',
+    path: '/config',
+    component: ConfiguratorPage
+  },
+  {
+    name: 'main',
+    path: '/',
+    component: LandingPage
+  },
+  {
+    name: 'profile',
+    path:'/profile',
+    component: ProfilePage
+  },
+  {
+    name: 'auth',
+    path:'/authentication',
+    component: AuthPage
+  }
 ]
 
 const router = new VueRouter({
