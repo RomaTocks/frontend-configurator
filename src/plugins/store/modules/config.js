@@ -6,13 +6,15 @@ export const configuration = {
 
   },
   mutations: {
+    closeDialog(state) {
+      state.config = false;
+    },
     dialog(state) {
       state.config = !state.config;
     },
     dialogLoader(state) {
       state.configLoader = !state.configLoader;
     }
-
   },
   getters: {
     getConfig: state => {
