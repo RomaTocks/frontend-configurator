@@ -14,6 +14,15 @@ export default new Vuex.Store({
 
   },
   mutations: {
+    removeElements() {
+      this.$store.commit('cpu/setCurrent', null)
+      this.$store.commit('gpu/setCurrent', null)
+      this.$store.commit('fan/setCurrent', null)
+      this.$store.commit('ram/setCurrent', null)
+      this.$store.commit('chassis/setCurrent', null)
+      this.$store.commit('psu/setCurrent', null)
+      this.$store.commit('motherboard/setCurrent', null)
+    },
     setController(state) {
       state.controller.abort();
       state.controller = new AbortController();
@@ -37,7 +46,6 @@ export default new Vuex.Store({
       return state.path;
     },
   },
-  actions: {},
   modules: {
     configurator : configuration,
     filters : filters,
