@@ -130,7 +130,16 @@ name: "ProductsContainer",
       return this.$store.getters.getController;
     },
     currentProduct() {
-      return this.$store.getters[this.path + '/getCurrent']
+      let current = this.$store.getters[this.path + '/getCurrent']
+      let configuration = JSON.parse(localStorage.getItem('configuration'));
+      if(configuration === null) {
+        configuration = {};
+      }
+      configuration[this.path] = current;
+
+      let stringlifiedConfiguration = JSON.stringify(configuration);
+      localStorage.setItem('configuration', stringlifiedConfiguration);
+      return current
     },
     loading() {
       return this.$store.getters.getProductsLoading;

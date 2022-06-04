@@ -48,6 +48,20 @@ export default {
 name: "ConfigurationCard",
   props: {
     product:Object,
+    changePath:String
+  },
+  methods: {
+    removeCurrent() {
+      this.$store.commit(this.changePath + '/setCurrent', this.product.id)
+      let storageStringConfiguration = localStorage.getItem('configuration');
+      let storageConfiguration = JSON.parse(storageStringConfiguration);
+      storageConfiguration[this.changePath] = null;
+      localStorage.setItem('configuration', JSON.stringify(storageConfiguration));
+    },
+    changeProduct() {
+      this.$store.commit('configurator/closeDialog');
+      this.$router.push(this.changePath)
+    },
   }
 }
 </script>
