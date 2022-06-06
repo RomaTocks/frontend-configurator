@@ -16,7 +16,7 @@
         >
           <v-icon color="green">mdi-minus</v-icon>
         </v-text-field>
-        <v-btn style="width: 48px; height: 48px" class="mt-4 mb-4 mr-2 ml-2" fab :loading="loading" @click="setFilter"><v-icon>mdi-filter</v-icon></v-btn>
+        <v-btn style="width: 48px; height: 48px" class="mt-4 mb-4 ml-2 mr-2" fab :loading="loading" @click="setFilter"><v-icon>mdi-filter</v-icon></v-btn>
       </v-row>
     </v-container>
   </v-banner>

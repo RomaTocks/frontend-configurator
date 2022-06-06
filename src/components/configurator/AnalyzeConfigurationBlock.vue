@@ -78,7 +78,6 @@ export default {
   }),
   watch : {
     currentProcessor: function (newProc) {
-      console.log(1111)
       if(newProc != null) {
         this.configuration.cpu = {
           id: newProc

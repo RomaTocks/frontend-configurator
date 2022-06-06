@@ -10,12 +10,12 @@ export default {
   name: "ConfiguratorButton",
   methods: {
     configDialog() {
-      this.$store.commit('dialog');
+      this.$store.commit('configurator/dialog');
     },
   },
   computed: {
     configLoader() {
-      return this.$store.getters.getConfigLoader;
+      return this.$store.getters["configurator/getConfigLoader"];
     }
   }
 }

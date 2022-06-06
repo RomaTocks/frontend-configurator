@@ -1,9 +1,9 @@
 <template>
-  <div style="max-width: 1385px" class="mb-3">
-    <v-card max-width="1385px" class="d-flex pa-4 align-center">
+  <div class="d-flex align-center justify-center mb-3">
+    <v-card width="1385px" class="d-flex pa-4 align-center">
       <v-container>
         <v-row justify="start">
-          <h4>{{ product.name }}</h4>
+          <router-link class="text-decoration-none" style="color: black" :to="'/' + path + '/' + product.id"><h4>{{ product.name }}</h4></router-link>
         </v-row>
         <v-row justify="center">
           <v-col class="align-self-center" cols="5">
@@ -17,14 +17,14 @@
           <v-col>
             <v-row class="mb-2" justify="end" align="center">
               <v-rating
-                :value=product.reviews.rating/10
+                :value=Math.ceil(product.reviews.rating/10)
                 background-color="grey darken-3"
                 color="yellow accent-4"
                 half-increments
                 readonly
                 size="18"
               ></v-rating>
-              <h4>{{product.reviews.rating/10}}, {{product.reviews.count}} отзывов</h4>
+              <h4>{{product.reviews.rating/10}} ({{product.reviews.count}} отзывов)</h4>
             </v-row>
             <v-row>
               {{ product.description }}
@@ -52,13 +52,11 @@
 export default {
 name: "ProductCard",
   props:{
+    path:String,
     card:Function,
     product:Object,
     current:String
   },
-  methods : {
-
-  }
 }
 </script>
 

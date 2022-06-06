@@ -3,7 +3,7 @@
     <v-container>
       <v-container>
         <v-row class="pa-6" justify="end">
-          <v-btn color="red" class="mr-3" outlined>
+          <v-btn @click="removeElements" color="red" class="mr-3" outlined>
             Очистить сборку
           </v-btn>
         </v-row>
@@ -57,6 +57,17 @@ export default {
   data() {
     return {
       step: 1,
+    }
+  },
+  methods: {
+    removeElements() {
+      this.$store.commit('cpu/setCurrent', null)
+      this.$store.commit('gpu/setCurrent', null)
+      this.$store.commit('fan/setCurrent', null)
+      this.$store.commit('ram/setCurrent', null)
+      this.$store.commit('chassis/setCurrent', null)
+      this.$store.commit('psu/setCurrent', null)
+      this.$store.commit('motherboard/setCurrent', null)
     }
   }
 }

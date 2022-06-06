@@ -19,6 +19,7 @@
         <v-spacer></v-spacer>
         <v-col class="shrink">
           <v-btn
+            @click="close"
             color="info"
             outlined
           >
@@ -43,7 +44,14 @@
 export default {
   props: {
     element : Object,
-    errors : Array
+    errors : Array,
+    to:String
+  },
+  methods: {
+    close() {
+      this.$store.commit('configurator/closeDialog');
+      this.$router.push(this.to);
+    }
   },
 name: "ConfiguratorError"
 }

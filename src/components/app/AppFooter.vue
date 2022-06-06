@@ -2,12 +2,12 @@
   <v-footer
     color="blue accent-4"
     dark
-    class="mt-10"
+    class="mt-10 d-flex justify-center"
   >
     <v-card
       flat
       tile
-      class=" blue accent-4 lighten-1 white--text text-center"
+      class="blue accent-4 lighten-1 white--text text-center"
     >
       <v-card-text class="white--text pt-4">
         <v-row>Проект находится на стадии ранней разработки в рамках темы диплома "Информационная система онлайн-конфигурирования персональных компьютеров"</v-row>
